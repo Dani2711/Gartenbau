@@ -1,0 +1,228 @@
+<script>
+  function myFunction(imgs) {
+  // Get the expanded image
+  var expandImg = document.getElementById("expandedImg");
+  // Get the image text
+  var imgText = document.getElementById("imgtext");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  imgText.innerHTML = imgs.alt;
+  // Show the container element (hidden with CSS)
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+<style>
+  /* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+/* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    
+.content {
+    width: calc(100% - 160px);
+    margin-left: 160px;
+}
+</style>
+<html>
+    <head>
+  
+
+		<title>Gartengestaltung Carter</title>
+		<!--<link rel="stylesheet" href="style.css">
+		<script src="js/Test.js"></script>-->
+	</head>
+    <body style="background-color: darkgreen;">
+        <!--<img src="Spedition%20Carter%20Transparent.png" width="1050" height="300">-->
+        
+       <!-- Side navigation -->
+		<div class="sidenav">
+		  <a onclick="OpenPage('about')">Startseite</a>
+		  <a onclick="OpenPage('services')">Angebote</a>
+		  <a onclick="OpenPage('clients')">Fuhrpark</a>
+		  <a onclick="OpenPage('contact')">Kontakt</a>
+		</div>
+
+		<!-- Page content -->
+		<div id="main">
+			<!--<form class="form-inline my-2 my-lg-0">
+			  <input class="form-control mr-sm-2" type="text" placeholder="Search">
+			  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>-->
+			<div class="content" id="about">
+                <center><img src="https://s12.directupload.net/images/200724/lyryyabt.png" width="500" alt="Logo"></center>
+                <br>
+                <p><center>Herzlich Willkommen auf der Website der Gartengestaltung Carter.
+                  <br>Wir, Ihr Meisterbetrieb für Gärtnerarbeiten führen alles nach Ihren Wünschen aus.
+                <br> Unser Unternehmen ist zwar noch neu in Los Santos wir können aber auf Jahrelange Erfahrung zurückgreifen.
+                <br> Wir machen alles Rund ums Grundstück oder Neuanlage.
+                    <br> auf den Nachfolgenden Seiten finden sie einen Überblick über unsere Angebote und Leistungen.
+                </center></p>
+			</div>
+			<div class="content" id="services" style="display: none;">
+                
+                <p><center><h2><u><h2>Angebote</h2></u>
+                    <br>Pflege</h2>
+                Wir führen die Unterschiedlichsten Pflegemaßnahmen durch.
+                <br>Unten finden sie ein paar Beispiele, für genaue Angebote nutzen Sie den Kontaktbereich.
+                <br><li>
+                    Hecken Schnitt</li>
+                    <li>Rasen mähen</li>
+                    <li>Unkraut Entfernung</li>
+                    Gerne gehen wir auch auf individuelle Wünsche ein, Sprechen sie uns einfach an.
+                        </center></p>
+                <br>
+                <br>
+                <br>
+            <p><center><h2>Neuanlage</h2>
+                Natürlich bieten wir auch eine Neuanlage ihres Gartens an.<br>
+                <br>Für genaue Angebote nutzen sie bitte unseren Kontaktbereich!
+                Unten finden sie einige Beispiele:
+                <br>
+<!-- The grid: four columns -->
+<div class="row">
+<div class="column">
+    <img src="https://www.gartentraum.de/magazin/wp-content/uploads/2018/09/Fotolia_168357576_M.jpg" width="300" height="400" alt="Teich" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://www.bauemotion.de/m6/36/59936/images/60/16193160px610x425s.jpg" width="300" height="400" alt="Teich" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://www.hausjournal.net/wp-content/uploads/natursteinweg-anlegen.jpg" width="300" height="400" alt="Gartenweg" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://www.kann.de/fileadmin/_processed_/4/3/csm_Vios_Palisaden_anthrazit_Gartenweg_8f6d094550.jpg" width="300" height="400" alt="Palisaden" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://www.bockheim-gartenbau.de/wp-content/uploads/2016/12/rasen_01.jpg" width="300" height="400" alt="Raseneinsaat" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://www.mein-schoener-garten.de/sites/default/files/styles/inline_scaled_s/public/sichtschutz-pool-01478724-dam-florapress.jpg?itok=T3DIceJ5" width="300" height="400" alt="Pool" onclick="myFunction(this);">
+  </div>
+</div>
+
+<!-- The expanding image container -->
+<div class="container">
+  <!-- Close the image -->
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+  <!-- Expanded image -->
+  <img id="expandedImg" style="width:100%">
+
+  <!-- Image text -->
+  <div id="imgtext"></div>
+</div>
+                
+                  <br> </li></center></p></div>
+
+                  
+                
+			</div>
+			<div class="content" id="clients" style="display: none;">
+      <center>Hier ein kleiner Einblick über unsere Fahrzeuge und Geräte</center>
+      <img src="https://s12.directupload.net/images/200724/c5styd43.jpg" width="1000" alt="Utility Van">
+			</div>
+			<div class="content" id="contact" style="display: none;">
+      <center><h2>Kontaktdaten</h2></center>
+      <br>Adresse:
+      <br>Hausnummer 499, Palomino Creek
+      <br>Telefon:
+      <br>127953
+      <br>Email:
+      <br><a href="https://nemesus-roleplay.net/index.php/User/8255-KatzenEule/">Daniel_Carter@nmail.sa</a>
+			</div>
+		</div>
+    </body>
+</html>
+
+<script type="text/javascript">
+function OpenPage(page) {
+	document.getElementById('about').style.display = 'none';
+	document.getElementById('services').style.display = 'none';
+	document.getElementById('clients').style.display = 'none';
+	document.getElementById('contact').style.display = 'none';
+	
+	document.getElementById(page).style.display = 'block';
+}
+</script>

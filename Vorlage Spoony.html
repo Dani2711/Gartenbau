@@ -1,0 +1,51 @@
+<html>
+    <head>
+  
+
+		<title>Spedition Carter</title>
+		<!--<link rel="stylesheet" href="style.css">
+		<script src="js/Test.js"></script>-->
+	</head>
+    <body>
+        <!--<img src="Spedition%20Carter%20Transparent.png" width="1050" height="300">-->
+        
+       <!-- Side navigation -->
+		<div class="sidenav">
+		  <a onclick="OpenPage('about')">About</a>
+		  <a onclick="OpenPage('services')">Services</a>
+		  <a onclick="OpenPage('clients')">Clients</a>
+		  <a onclick="OpenPage('contact')">Contact</a>
+		</div>
+
+		<!-- Page content -->
+		<div id="main">
+			<!--<form class="form-inline my-2 my-lg-0">
+			  <input class="form-control mr-sm-2" type="text" placeholder="Search">
+			  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>-->
+			<div id="about">
+                About-Feld
+			</div>
+			<div id="services" style="display: none;">
+                Services-Feld
+			</div>
+			<div id="clients" style="display: none;">
+                Clients-Feld
+			</div>
+			<div id="contact" style="display: none;">
+                Contact-Feld
+			</div>
+		</div>
+    </body>
+</html>
+
+<script type="text/javascript">
+function OpenPage(page) {
+	document.getElementById('about').style.display = 'none';
+	document.getElementById('services').style.display = 'none';
+	document.getElementById('clients').style.display = 'none';
+	document.getElementById('contact').style.display = 'none';
+	
+	document.getElementById(page).style.display = 'block';
+}
+</script>
